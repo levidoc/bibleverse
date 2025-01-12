@@ -629,10 +629,10 @@ strong {
   <section class="styleguide">
     <div class="container is--medium">
       <div class="styleguide__list">
-	          <div id="bible-content"></div>
-        <h1>Page Not Found</h1>
-        <h4>Oops! We couldn't find the page that you're looking for.</h4>
-        <p>Please check the address and try again.</p>
+        <h1>Bible Study</h1>
+        <h4>Online Group</h4>
+	<div style="background-url(https://images.unsplash.com/photo-1640013097686-6879c7c4a59b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)">
+	</div>
         <div class="line"></div>
         
       </div>
@@ -649,7 +649,7 @@ strong {
           <div class="nav-row__right">
             <a id="ext-dennis" href="#" target="_blank" class="website-link is--alt w-inline-block">
               <div class="website-link__arrow"></div>
-              <p class="inline-link__p">Bible Study</p>
+              <p class="inline-link__p"></p>
             </a>
           </div>
         </nav>
@@ -681,28 +681,6 @@ strong {
 	        }
 	</style>
 
-    <script>
-        const url = 'https://cdn.jsdelivr.net/gh/kenyonbowers/BibleJSON@main/JSON/Psalms/23.json';
-
-        fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                const contentDiv = document.getElementById('bible-content');
-                const header = document.createElement('h3');
-                header.innerText = data.header;
-                contentDiv.appendChild(header);
-
-                data.verses.forEach(verse => {
-                    const verseDiv = document.createElement('div');
-                    verseDiv.classList.add('verse');
-                    verseDiv.innerHTML = `<strong>${verse.verse}:</strong> ${verse.text}`;
-                    contentDiv.appendChild(verseDiv);
-                });
-            })
-            .catch(error => {
-                console.error('Error fetching the Bible JSON:', error);
-            });
-    </script>
 
 	</body>
 </html>
