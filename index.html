@@ -703,8 +703,28 @@ strong {
 	        }
 
 		.bookcontents{
-		background-color:red; 
+			background-color: #6f3ab952;
+    			margin: 0rem;
+    			border-radius: 15px;
+    			width: 100%;
+    			padding: 5px;
+			border: 1px solid white;
+			 
 		}
+
+		.bookcontents h4{
+			font-size: 35px;
+    			margin: 0px;
+    			padding: 10px 10px;
+		}
+
+		.bookcontents strong{
+			font-size: 0.4cm;
+    			padding: 0px 10px;
+    			color: #eff7ff;
+		}
+
+		
 	</style>
 
 	<script>
@@ -724,7 +744,7 @@ strong {
             data.books.forEach(book => {
 		     const bookcontents = document.createElement('div');
                     bookcontents.classList.add('bookcontents');
-                    bookcontents.innerHTML = `<h4>${book.book}</h4><strong>${book.chapters}:</strong>`;
+                    bookcontents.innerHTML = `<h4><img width="50" height="50" src="https://img.icons8.com/ios-filled/50/book.png" alt="book"/>${book.book}</h4><strong>Chapters: ${book.chapters}:</strong>`;
                     container.appendChild(bookcontents);
 		    
                 console.log(`Book: ${book.book}, Chapters: ${book.chapters}, Verses: ${book.verses}`);
