@@ -712,6 +712,11 @@ strong {
             });
       }
 
+	    function view_study(book,chapter,verses){
+		window.location.href = '/scriptures/?book='+read_current_page_url('book')+'&chapter='+read_current_page_url('chapter')+'&verses='+read_current_page_url('verses'); 
+	    }
+	    
+
       function read_current_page_url(guide="context"){
     const url = new URL(window.location.href); 
     if (url.searchParams.has(guide)){
