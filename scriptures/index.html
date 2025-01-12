@@ -631,7 +631,7 @@ strong {
     <div class="container is--medium">
       <div class="styleguide__list">
 	      <h4>Online Study</h4>
-	      <h2>Opening Books</h2>
+	      <h2 id="system_chapter">Opening Books</h2>
 	      <br>
 	      <h4></h4>
 	      <div id="bible-content"></div>
@@ -684,6 +684,14 @@ strong {
 	</style>
 
     <script>
+
+	    function prepare_reading(){
+		   let system_chapter = read_current_page_url("chapter"); 
+        	   let system_verse = read_current_page_url("verses");
+		   let system_book = read_current_page_url("book");
+
+		   document.getElementById('system_chapter').innerHTML = system_chapter; 
+	    }
 
       function retrieve_chapter(){
         let system_chapter = read_current_page_url("chapter"); 
