@@ -636,8 +636,8 @@ strong {
     <div class="container is--medium">
       <div class="styleguide__list">
 	<div>
-	      <h4 style="margin:0px">Scripture Study</h4>
-		<div style="display:flex; align-items:center;"><img width="48" height="48" src="https://img.icons8.com/color-glass/48/back.png" alt="back"/> <h2 id="system_chapter">Study Session</h2></div>
+	      <h4 style="margin:0px">Stated Scriptures</h4>
+		<div style="display:flex; align-items:center;"><img onclick="view_home_page()" width="48" height="48" src="https://img.icons8.com/color-glass/48/back.png" alt="back"/> <h2 id="system_chapter">Study Session</h2></div>
       	</div>
 	      <br>
 	      <div id="bible-content"></div>
@@ -758,8 +758,12 @@ strong {
 	    }
 
 	    function view_study(book,chapter,verses){
-	window.location.href = '/study/?book='+book+'&chapter='+chapter+'&verses='+verses; 
-}
+		window.location.href = '/study/?book='+book+'&chapter='+chapter+'&verses='+verses; 
+	    }
+
+	    function view_home_page(){
+		    window.location.href = 'https://bibleverse.crossgen.co.za/'; 
+	    }
 
       
       function read_current_page_url(guide="context"){
