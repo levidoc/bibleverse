@@ -747,14 +747,22 @@ strong {
 		     const bookcontents = document.createElement('div');
                     bookcontents.classList.add('bookcontents');
                     bookcontents.innerHTML = `<h4><img width="35" height="35" src="https://img.icons8.com/ios-filled/50/book.png" alt="book"/>${book.book}</h4><strong>Chapters: ${book.chapters}:</strong>`;
-                    container.appendChild(bookcontents);
+		    bookcontents.onclick = function(){
+			view_scriptures(book.book,book.chapters,book.verses); 					    
+		    }
+		    container.appendChild(bookcontents);
+
 		    
                 //console.log(`Book: ${book.book}, Chapters: ${book.chapters}, Verses: ${book.verses}`);
-            });
+            }); 
         })
         .catch(error => {
             console.error('Error fetching the Bible books:', error);
         });
+}
+
+function view_scriptures(book,chapter,verses){
+	window.location.href = '/scriptures/?book='+book+'&chapter='+chapter+'&verses='+verses; 
 }
 
 // Call the function to fetch the data
