@@ -643,13 +643,13 @@ strong {
     <header class="header">
       <div class="container is--full">
         <nav class="nav-row">
-          <a href="https://varsitymarket.shop/" aria-label="home" target="_blank" class="nav-logo-row w-inline-block">
+          <a href="#" aria-label="home" target="_blank" class="nav-logo-row w-inline-block">
             <img src="https://cdn.varsitymarket.shop/img/favicon.png" style="width:100%; max-width:2.5rem; ">
           </a> 
           <div class="nav-row__right">
-            <a id="ext-dennis" href="https://varsitymarket.shop/" target="_blank" class="website-link is--alt w-inline-block">
+            <a id="ext-dennis" href="#" target="_blank" class="website-link is--alt w-inline-block">
               <div class="website-link__arrow"></div>
-              <p class="inline-link__p">Error Code: <strong>404</strong></p>
+              <p class="inline-link__p">Bible Study</p>
             </a>
           </div>
         </nav>
@@ -661,7 +661,7 @@ strong {
         <div class="footer-row">
           <div class="cloneable-title">
             <p class="cloneable-title__nr">Powered by</p>
-            <h1 class="cloneable-title__h1">Varsity Market Technologies</h1>
+            <h1 class="cloneable-title__h1">Wiseman.Blog</h1>
             <div class="cloneable-title__gradient"></div>
           </div>
           
@@ -681,13 +681,13 @@ strong {
 	</style>
 
     <script>
-        const url = 'https://cdn.jsdelivr.net/gh/kenyonbowers/BibleJSON@main/JSON/Psalms/3.json';
+        const url = 'https://cdn.jsdelivr.net/gh/kenyonbowers/BibleJSON@main/JSON/Psalms/23.json';
 
         fetch(url)
             .then(response => response.json())
             .then(data => {
                 const contentDiv = document.getElementById('bible-content');
-                const header = document.createElement('h2');
+                const header = document.createElement('h3');
                 header.innerText = data.header;
                 contentDiv.appendChild(header);
 
