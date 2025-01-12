@@ -629,8 +629,10 @@ strong {
   <section class="styleguide">
     <div class="container is--medium">
       <div class="styleguide__list">
-	      <h4>Online Study</h4>
-	      <h2>Study Session</h2>
+	 <div>
+	      <h4 style="margin:0px">Bible Reading</h4>
+	      <h2 id="chapter_request">Study Session</h2>
+      	 </div>
 	      <br>
 	      <h4></h4>
 	<div id="bible-content"></div>
@@ -686,9 +688,9 @@ strong {
 
       function retrieve_chapter(){
         let system_chapter = read_current_page_url("book"); 
+	document.getElementById('chapter_request').innerHTML = system_chapter; 
         let system_verse = read_current_page_url("chapter"); 
         const url = 'https://cdn.jsdelivr.net/gh/kenyonbowers/BibleJSON@main/JSON/'+system_chapter+'/'+system_verse+'.json';
-	      alert(url); 
 
         fetch(url)
             .then(response => response.json())
