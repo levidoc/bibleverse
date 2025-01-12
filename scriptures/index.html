@@ -633,7 +633,6 @@ strong {
 	      <h4>Scripture Study</h4>
 	      <h2 id="system_chapter"></h2>
 	      <br>
-	      <h4></h4>
 	      <div id="bible-content"></div>
         <div class="line"></div>
         
@@ -702,7 +701,7 @@ strong {
                 return;
             }
 
-            const container = document.getElementById('container');
+            const container = document.getElementById('bible-content');
 
             for (let i = 1; i <= num; i++) {
                 const element = document.createElement('div');
@@ -711,7 +710,7 @@ strong {
 
                 // Add a click event
                 element.addEventListener('click', function() {
-                    alert(`You clicked on Element ${i}`);
+			view_study(read_current_page_url("book"),i,read_current_page_url("verses")); 
                 });
 
                 container.appendChild(element);
@@ -725,42 +724,22 @@ strong {
 
 	    }
 
-      function retrieve_chapter(){
-        let system_chapter = read_current_page_url("chapter"); 
-        let system_verse = read_current_page_url("verse"); 
-        const url = 'https://cdn.jsdelivr.net/gh/kenyonbowers/BibleJSON@main/JSON/'+system_chapter+'/'+system_verse+'.json';
-	      alert(url); 
+	    function view_study(book,chapter,verses){
+	window.location.href = '/study/?book='+book+'&chapter='+chapter+'&verses='+verses; 
+}
 
-        fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                const contentDiv = document.getElementById('bible-content');
-                const header = document.createElement('h3');
-                header.innerText = data.header;
-                contentDiv.appendChild(header);
-
-                data.verses.forEach(verse => {
-                    const verseDiv = document.createElement('div');
-                    verseDiv.classList.add('verse');
-                    verseDiv.innerHTML = `<strong>${verse.verse}:</strong> ${verse.text}`;
-                    contentDiv.appendChild(verseDiv);
-                });
-            })
-            .catch(error => {
-                console.error('Error fetching the Bible JSON:', error);
-            });
-      }
-
+      
       function read_current_page_url(guide="context"){
-    const url = new URL(window.location.href); 
-    if (url.searchParams.has(guide)){
-        return url.searchParams.get(guide); 
-        //return (guide); 
-    }
-    return null; 
-};
+	    const url = new URL(window.location.href); 
+	    if (url.searchParams.has(guide)){
+	        return url.searchParams.get(guide); 
+	        //return (guide); 
+	    }
+	    return null; 
+	};
 
-      retrieve_chapter(); 
+	    prepare_reading(); 
+
     </script>
 
 	</body>
