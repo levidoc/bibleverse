@@ -716,6 +716,8 @@ strong {
 			font-size: 35px;
     			margin: 0px;
     			padding: 10px 10px;
+			    display: flex;
+    align-items: center;
 		}
 
 		.bookcontents strong{
@@ -744,10 +746,10 @@ strong {
             data.books.forEach(book => {
 		     const bookcontents = document.createElement('div');
                     bookcontents.classList.add('bookcontents');
-                    bookcontents.innerHTML = `<h4><img width="50" height="50" src="https://img.icons8.com/ios-filled/50/book.png" alt="book"/>${book.book}</h4><strong>Chapters: ${book.chapters}:</strong>`;
+                    bookcontents.innerHTML = `<h4><img width="35" height="35" src="https://img.icons8.com/ios-filled/50/book.png" alt="book"/>${book.book}</h4><strong>Chapters: ${book.chapters}:</strong>`;
                     container.appendChild(bookcontents);
 		    
-                console.log(`Book: ${book.book}, Chapters: ${book.chapters}, Verses: ${book.verses}`);
+                //console.log(`Book: ${book.book}, Chapters: ${book.chapters}, Verses: ${book.verses}`);
             });
         })
         .catch(error => {
