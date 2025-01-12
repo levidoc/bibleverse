@@ -1,12 +1,9 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Page Not Found</title>
+		<title>Bible Study</title>
 		<style>
 			.animate__animated {
 				animation-duration: 1s;
@@ -632,6 +629,7 @@ strong {
   <section class="styleguide">
     <div class="container is--medium">
       <div class="styleguide__list">
+	          <div id="bible-content"></div>
         <h1>Page Not Found</h1>
         <h4>Oops! We couldn't find the page that you're looking for.</h4>
         <p>Please check the address and try again.</p>
@@ -647,7 +645,7 @@ strong {
         <nav class="nav-row">
           <a href="https://varsitymarket.shop/" aria-label="home" target="_blank" class="nav-logo-row w-inline-block">
             <img src="https://cdn.varsitymarket.shop/img/favicon.png" style="width:100%; max-width:2.5rem; ">
-          </a>
+          </a> 
           <div class="nav-row__right">
             <a id="ext-dennis" href="https://varsitymarket.shop/" target="_blank" class="website-link is--alt w-inline-block">
               <div class="website-link__arrow"></div>
@@ -672,5 +670,38 @@ strong {
       <div class="osmo-ui__bg"></div>
     </footer>
   </div>
+
+	<style>
+	        .verse {
+	            margin: 10px 0;
+	            padding: 10px;
+	            border-left: 4px solid #007bff;
+	            background: #e9ecef;
+	        }
+	</style>
+
+    <script>
+        const url = 'https://cdn.jsdelivr.net/gh/kenyonbowers/BibleJSON@main/JSON/Psalms/3.json';
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const contentDiv = document.getElementById('bible-content');
+                const header = document.createElement('h2');
+                header.innerText = data.header;
+                contentDiv.appendChild(header);
+
+                data.verses.forEach(verse => {
+                    const verseDiv = document.createElement('div');
+                    verseDiv.classList.add('verse');
+                    verseDiv.innerHTML = `<strong>${verse.verse}:</strong> ${verse.text}`;
+                    contentDiv.appendChild(verseDiv);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching the Bible JSON:', error);
+            });
+    </script>
+
 	</body>
 </html>
