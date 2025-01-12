@@ -623,6 +623,11 @@ strong {
   font-display: swap;
 }
 
+			#bible-content{   display: grid;
+    width: 100%;
+    grid-template-columns: repeat(8, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;}
 		
   </style>
 </head>
@@ -680,6 +685,32 @@ strong {
     /* background: #e9ecef; */
 			
 	        }
+
+		
+		.bookcontents{
+			background-color: #6f3ab952;
+    			margin: 0rem;
+    			border-radius: 15px;
+    			width: 100%;
+    			padding: 5px;
+			border: 1px solid white;
+			 
+		}
+
+		.bookcontents h4{
+			font-size: 35px;
+    			margin: 0px;
+    			padding: 10px 10px;
+			    display: flex;
+    align-items: center;
+		}
+
+		.bookcontents strong{
+			font-size: 0.4cm;
+    			padding: 0px 10px;
+    			color: #eff7ff;
+		}
+		
 	</style>
 
     <script>
@@ -689,7 +720,7 @@ strong {
         	   let system_verse = read_current_page_url("verses");
 		   let system_book = read_current_page_url("book");
 
-		   document.getElementById('system_chapter').innerHTML = system_chapter; 
+		   document.getElementById('system_chapter').innerHTML = system_book; 
 
         function createElements(count) {
             // Convert count to a number, if it's a string
@@ -705,7 +736,7 @@ strong {
 
             for (let i = 1; i <= num; i++) {
                 const element = document.createElement('div');
-                element.innerText = `<strong>Chapter ${i}</strong>`;
+                element.innerHTML = `<strong>Chapter ${i}</strong>`;
 		element.classList.add('bookcontents');
 
                 // Add a click event
