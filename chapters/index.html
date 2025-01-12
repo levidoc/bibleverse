@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -688,6 +687,7 @@ strong {
         let system_chapter = read_current_page_url("chapter"); 
         let system_verse = read_current_page_url("verse"); 
         const url = 'https://cdn.jsdelivr.net/gh/kenyonbowers/BibleJSON@main/JSON/'+system_chapter+'/'+system_verse+'.json';
+	      alert(url); 
 
         fetch(url)
             .then(response => response.json())
